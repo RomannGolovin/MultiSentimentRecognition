@@ -9,8 +9,8 @@ It contains 4 parts:
 
 Here are some functions for some data preparation.
 **remove_url(text)**
-text: str - input text__
-_output_: str - text without URL__
+text: str - input text <br />
+_output_: str - text without URL <br />
 **remove_special_characters(text, drop_digit=True, drop_cyrillic=True)**
 text: str - input text
 drop_digit: boolean - flag of deleting digits
