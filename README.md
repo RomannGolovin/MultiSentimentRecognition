@@ -4,7 +4,7 @@ This tool helps to prepare data and make sentiment classification.
 It contains 4 parts:
 
 ## Preprocessing
-Here are some functions for some data preparation.
+Here are some functions for some data preparation. <br />
 **remove_url(text)** <br />
 text: str - input text <br />
 _output_: str - text without URL <br />
@@ -29,7 +29,7 @@ get_lemma: boolean - flag of making lemmas <br />
 output: list - list of tokens or lemmas <br />
 
 ## Machine Translation
-Here are some functions for some automatic translation for texts and lists of texts.
+Here are some functions for some automatic translation for texts and lists of texts. <br />
 **translation(text, target_lang, use_list, get_large_trans)** <br />
 text: str or list - input text <br />
 target_lang: str or list - if string, this language (or 'auto') is used for all input. If list, it must be the same length as text input <br />
@@ -38,7 +38,7 @@ get_large_trans: boolean - flag of getting translations for text which is more t
 _output_: str or list - translated text <br />
 
 ## Embeddings
-Here are some functions for using embeddinf.
+Here are some functions for using embeddinds. <br />
 **encode(word)** <br />
 word: str - word <br />
 _output_: int - idx for word in embedding model if word exist in this model, else idx for 'UNK' <br />
@@ -52,7 +52,7 @@ max_length: int - maximal amount of words in sentence <br />
 _output_: list - if emb_type = 'mean' then returns mean embeddings of every word of size [N], N refers to size of each  <br />embedding length. If emb_type = 'sequence' then returns list of idx of every word in sentence in embedding model of size [M], M refers to length of sentence <br />
 
 ## LSTM
-Here are some functions for using neural network models.
+Here are some functions for using neural network models. <br />
 **create_nn(use_embed_layer, embed_size, hidden_size, drop_rate, sequence_length, layer_type, bidir_flg, num_layers)** <br />
 use_embed_layer: boolean - flag of using nn.Embedding layer. If False then nn.Linear is used <br />
 embed_size: int - size of embed layer <br />
