@@ -5,21 +5,21 @@ It contains 4 parts:
 
 ## Preprocessing
 Here are some functions for some data preparation.
-**remove_url(text)**
+**remove_url(text)** <br />
 text: str - input text <br />
 _output_: str - text without URL <br />
 
-**remove_special_characters(text, drop_digit=True, drop_cyrillic=True)**
+**remove_special_characters(text, drop_digit=True, drop_cyrillic=True)** <br />
 text: str - input text <br />
 drop_digit: boolean - flag of deleting digits <br />
 drop_cyrillic: boolean - flag of deleting Cyrillic symbols <br />
 _output_: str - text <br />
 
-**remove_extra_spaces(text)**
+**remove_extra_spaces(text)** <br />
 text: str - input text <br />
 _output_: str - text <br />
 
-**create_lemma(text, tokenizer, lemmatizer, punctuations, stop_words, get_lemma)**
+**create_lemma(text, tokenizer, lemmatizer, punctuations, stop_words, get_lemma)** <br />
 text: str - input text <br />
 tokenizer - used tokenizer from nltk <br />
 lemmatizer - used lemmatizer from nltk <br />
@@ -30,7 +30,7 @@ output: list - list of tokens or lemmas <br />
 
 ## Machine Translation
 Here are some functions for some automatic translation for texts and lists of texts.
-**translation(text, target_lang, use_list, get_large_trans)**
+**translation(text, target_lang, use_list, get_large_trans)** <br />
 text: str or list - input text <br />
 target_lang: str or list - if string, this language (or 'auto') is used for all input. If list, it must be the same length as text input <br />
 use_list: boolean - flag of having several input texts <br />
@@ -39,11 +39,11 @@ _output_: str or list - translated text <br />
 
 ## Embeddings
 Here are some functions for using embeddinf.
-**encode(word)**
+**encode(word)** <br />
 word: str - word <br />
 _output_: int - idx for word in embedding model if word exist in this model, else idx for 'UNK' <br />
 
-**make_emb(emb_vectors, sent, emb_type, min_length, max_length)**
+**make_emb(emb_vectors, sent, emb_type, min_length, max_length)** <br />
 emb_vectors - used embedding model <br />
 sent: str or list - raw sentence or list of tokens <br />
 emb_type: str - type of returned embeddings <br />
@@ -53,7 +53,7 @@ _output_: list - if emb_type = 'mean' then returns mean embeddings of every word
 
 ## LSTM
 Here are some functions for using neural network models.
-**create_nn(use_embed_layer, embed_size, hidden_size, drop_rate, sequence_length, layer_type, bidir_flg, num_layers)**
+**create_nn(use_embed_layer, embed_size, hidden_size, drop_rate, sequence_length, layer_type, bidir_flg, num_layers)** <br />
 use_embed_layer: boolean - flag of using nn.Embedding layer. If False then nn.Linear is used <br />
 embed_size: int - size of embed layer <br />
 hidden_size: int - size of hidden layer <br />
@@ -64,7 +64,7 @@ bidir_flg: boolean - flag of using bidirectional recurrent layer <br />
 num_layers: int - number of recurrent layers <br />
 _output_ - Neural Network <br />
 
-**data_preprocess(df, text_column, label_column, datatype_column, datatype, fillna, shuffle_flg)**
+**data_preprocess(df, text_column, label_column, datatype_column, datatype, fillna, shuffle_flg)** <br />
 df: pd.DataFrame - input dataframe <br />
 text_column: str - name of text column <br />
 label_column: str - name of label column <br />
@@ -74,7 +74,7 @@ fillna: 'drop' or list - way of filling NaN. If 'drop' then all missing data is 
 shuffle_flg: boolean - flag of shuffling the dataframe <br />
 _output_: pd.DataFrame - output dataframe <br />
 
-**create_embeddings(df, text_column, label_column, model, emb_type, min_length, max_length, train_test_rate, datatype_column, test_type)**
+**create_embeddings(df, text_column, label_column, model, emb_type, min_length, max_length, train_test_rate, datatype_column, test_type)** <br />
 df: pd.DataFrame - input dataframe <br />
 text_column: str - name of text column <br />
 label_column: str - name of label column <br />
@@ -87,13 +87,13 @@ datatype_column: str - name of column with data type <br />
 test_type: str - if 'all' then dataset splits as in train_test_rate. If another then set data type is used in test dataframe and other data types are used in train dataset <br />
 _output_:pd.Dataframe - output dataframe <br />
 
-**get_collator(max_len, text_column, label_column)**
+**get_collator(max_len, text_column, label_column)** <br />
 max_len: int - max sentence length in batch <br />
 text_column: str - name of text column <br />
 label_column: str - name of label column <br />
 _output_: Collator - collator for making batches <br />
  
-**create_dataloaders_kfold(df, n_splits, batch_size, collate_fn, get_one, num_iter)**
+**create_dataloaders_kfold(df, n_splits, batch_size, collate_fn, get_one, num_iter)** <br />
 df: pd.Dataframe - input dataframe <br />
 n_splits: int - number of k-fold splits. If 1 then there is no cross-validation <br />
 batch_size: int - batch size <br />
@@ -102,7 +102,7 @@ get_one: boolean - flag of returning all cross validation iteration. If False th
 num_iter: int - number of returned iteration if get_one = False <br />
 _output_: Dataloader <br />
 
-**training(model, x_column, y_column, criterion, optimizer,  scheduler, num_epochs, loaders, hyperparameters, df_result)**
+**training(model, x_column, y_column, criterion, optimizer,  scheduler, num_epochs, loaders, hyperparameters, df_result)** <br />
 model - neural network model <br />
 x_column: str - name of text column <br />
 y_column: str - name of label column <br />
